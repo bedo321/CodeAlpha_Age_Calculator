@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha - Age Calculator</title>
+    <link rel="stylesheet" href="age.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1>
+                CodeAlpha Age Calcluator
+            <div class="input">
+                <input type="date" id="date">
+                <button onclick="calculate1()">Calculate!</button>
+            </div>
+            <p id="age"></p>
+        </div>
+    </div>
+    <script>
+        let userinput = document.getElementById("date");
+        let age = document.getElementById("age");
+
+        function calculate1() {
+            let date = new Date(userinput.value);
+            let day1 = date.getDate();
+            let month1 = date.getMonth() + 1;
+            let year1 = date.getFullYear();
+            let now = new Date();
+            let day2 = now.getDate();
+            let month2 = now.getMonth() + 1;
+            let year2 = now.getFullYear();
+
+            let year3;
+            let month3;
+            let day3;
+            year3 = year2 - year1;
+            if (month2 >= month1){
+                month3 = month2 - month1;
+            }
+            else {
+                year3--;
+                month3 = month2 - month1 + 12;
+            }
+            if (day2 >= day1){
+                day3 = day2 - day1;}
+            else {
+                month3--;
+                day3 = day2 - day1;
+                if (month3 == 2){
+                    day3 += 28;}
+                else if (month3 == 4 || month3 == 6 || month3 == 9 || month3 == 11){
+                    day3 += 30;
+                }
+                else{
+                    day3 += 31;}
+            }
+            let leap = Math.floor(year3/4);
+            day3 += leap;
+            while(day3 > 29) {
+                month3++;
+                day3 -= 29;
+            }
+            while(month3 > 12) {
+                year3++;
+                month3 -= 12;
+            }
+            console.log(year3,month3,day3);
+            age.innerHTML = `You are now ${year3} years, ${month3} months, ${day3} days old!`;      
+          }   
+    </script>
+</body>
+</html>

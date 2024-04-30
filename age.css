@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(217deg, rgba(78, 246, 252, 0.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(245, 113, 234, 0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    padding: 10px;
+}
+.calculator {
+    max-width: fit-content;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.calculator h1 {
+    text-align: center;
+    font-size: 45px;
+    color: rgb(141, 63, 135);
+    padding-bottom: 15%;
+}
+.input{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background: linear-gradient(217deg, rgba(78, 246, 252, 0.9), rgba(255,0,0,0) 75.71%),
+    linear-gradient(127deg, rgba(245, 113, 234, 0.9), rgba(0,255,0,0) 75.71%),
+    linear-gradient(336deg, rgba(0,0,255,0.9), rgba(0,0,255,0) 75.71%);
+    color: rgb(141, 63, 135);
+    display: flex;
+}
+.input input{
+    background-color: aliceblue;
+    flex: auto;
+    margin: 10px;
+    border: 0;
+    outline: 0;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.input button{
+    background-color: aliceblue;
+    border: 0;
+    outline: 0;
+    flex: right;
+    margin: auto;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+}
